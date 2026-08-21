@@ -31,7 +31,7 @@ const DeleteTodo = ({ todo, onClose }) => {
   return (
     <div className="bg-white rounded-2xl mt-4 border border-slate-200 shadow-sm p-6 w-full max-w-3xl mx-auto">
       <h2 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3 text-center">
-        Delete Todo?
+        Delete Task?
       </h2>
 
       <p className="text-sm sm:text-base text-slate-500 leading-relaxed text-center mb-6">

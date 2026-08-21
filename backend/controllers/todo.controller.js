@@ -18,7 +18,7 @@ export const createTodo = async (req, res) => {
     });
     return res.status(201).json({
       success: true,
-      message: "Todo Created Successfully!",
+      message: "Task Created Successfully!",
       todo,
     });
   } catch (error) {
@@ -35,7 +35,7 @@ export const getCreatorTodo = async (req, res) => {
       return res.status(200).json({
         success: true,
         todo: [],
-        message: "Todo not found",
+        message: "Task not found",
       });
     }
     return res.status(200).json({
@@ -54,7 +54,7 @@ export const getTodoById = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(todoId)) {
       return res.status(400).json({
         success: false,
-        message: "Invalid Todo ID",
+        message: "Invalid Task ID",
       });
     }
 
@@ -63,13 +63,13 @@ export const getTodoById = async (req, res) => {
     if (!todo || todo.creator.toString() !== req.userId.toString()) {
       return res.status(404).json({
         success: false,
-        message: "Todo not found",
+        message: "Task not found",
       });
     }
 
     return res.status(200).json({
       success: true,
-      message: "Todo fetched successfully",
+      message: "Task fetched successfully",
       todo,
     });
   } catch (error) {
@@ -89,14 +89,14 @@ export const updateTodo = async (req, res) => {
     if (!todoId) {
       return res.status(400).json({
         success: false,
-        message: "Invalid TodoId",
+        message: "Invalid TaskId",
       });
     }
 
     if (!mongoose.Types.ObjectId.isValid(todoId)) {
       return res.status(400).json({
         success: false,
-        message: "Invalid Todo ID",
+        message: "Invalid Task ID",
       });
     }
 
@@ -104,7 +104,7 @@ export const updateTodo = async (req, res) => {
     if (!todo) {
       return res.status(404).json({
         success: false,
-        message: "Todo Not found",
+        message: "Task Not found",
       });
     }
 
@@ -140,13 +140,13 @@ export const updateTodo = async (req, res) => {
     });
     return res.status(200).json({
       success: true,
-      message: "Todo Updated Successfully",
+      message: "Task Updated Successfully",
       updatedTodo,
     });
   } catch (error) {
     console.log("failed to update todo:", error);
     res.status(500).json({
-      message: "Failed to update Todo",
+      message: "Failed to update Task",
       success: false,
     });
   }
@@ -159,14 +159,14 @@ export const deleteTodo = async (req, res) => {
     if (!todoId) {
       return res.status(400).json({
         success: false,
-        message: "TodoId not found",
+        message: "TaskId not found",
       });
     }
 
     if (!mongoose.Types.ObjectId.isValid(todoId)) {
       return res.status(400).json({
         success: false,
-        message: "Invalid Todo ID",
+        message: "Invalid Task ID",
       });
     }
 
@@ -174,7 +174,7 @@ export const deleteTodo = async (req, res) => {
     if (!todo) {
       return res.status(404).json({
         success: false,
-        message: "Todo not found",
+        message: "Task not found",
       });
     }
 
@@ -188,7 +188,7 @@ export const deleteTodo = async (req, res) => {
     await Todo.findByIdAndDelete(todoId);
     return res.status(200).json({
       success: true,
-      message: "Todo Deleted Successfully",
+      message: "Task Deleted Successfully",
     });
   } catch (error) {
     console.log("deleteTodo error: ", error);
