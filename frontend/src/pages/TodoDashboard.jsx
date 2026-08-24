@@ -146,7 +146,7 @@ const TodoDashboard = () => {
         <p className="text-center mt-8 text-slate-500">Loading your todos...</p>
       ) : todos.length === 0 ? (
         <div className="text-center mt-10">
-          <h3 className="text-lg font-semibold text-slate-700">No todos yet</h3>
+          <h3 className="text-lg font-semibold text-slate-700">No tasks yet</h3>
 
           <p className="mt-2 text-sm text-slate-500">
             Create your first todo and start getting things done.
