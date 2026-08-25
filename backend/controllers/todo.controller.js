@@ -76,7 +76,7 @@ export const getTodoById = async (req, res) => {
     console.log("getTodoById error occurred:", error);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error",
+      message: "Internal Server Error.",
     });
   }
 };
