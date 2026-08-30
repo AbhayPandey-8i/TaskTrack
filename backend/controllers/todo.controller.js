@@ -8,7 +8,7 @@ export const createTodo = async (req, res) => {
     if (!title) {
       return res.status(400).json({
         success: false,
-        message: "Title is required",
+        message: "Title is required.",
       });
     }
     const todo = await Todo.create({
