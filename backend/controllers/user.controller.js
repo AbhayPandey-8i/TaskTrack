@@ -92,7 +92,7 @@ export const login = async (req, res) => {
         },
       });
   } catch (error) {
-    console.log("Login Failed: ", error);
+    console.log("Login Failed.: ", error);
   }
 };
 
